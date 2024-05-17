@@ -25,3 +25,19 @@ docker images
 ```
 
 ![ConnectPrivate](/images/1.Docker-Basic/2.DockerBasic.png)
+
+4. Now let's try `docker run -d -p 8080:80 --name nginx nginx:latest` to instantiate the nginx image as a background daemon with port 8080 on the host forwarding through to port 80 within the container.
+
+```
+docker run -d -p 8080:80 --name nginx nginx:latest
+```
+
+Specify some flags in the Docker command:
+   - **-d**: Means **detached** mode,  we want to instantiate the nginx image as a **background daemon**.
+   - **--name**: The **--name** flag is used to specify the name of the container. This means that the command **docker run --name nginx** will create and run a new container from the nginx image, and the name of this container will be nginx.
+   - **-p**: to map port 8080 with port 80 within the container.
+
+![ConnectPrivate](/images/1.Docker-Basic/3.DockerBasic.png)
+
+
+5. 
