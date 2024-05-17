@@ -56,3 +56,28 @@ curl http://localhost:8080
 ```
 
 ![ConnectPrivate](/images/1.Docker-Basic/5.DockerBasic.png)
+
+6. Running `docker logs nginx` shows us the logs produced by nginx and the container.
+- `docker logs` command batch-retrieves logs present at the time of execution.
+
+![ConnectPrivate](/images/1.Docker-Basic/6.DockerBasic.png)
+
+7. Use `docker exec -it nginx /bin/bash` to start an interactive shell into the container's filesystem and constraints.
+- The `docker exec` command runs a new command in a running container.
+
+![ConnectPrivate](/images/1.Docker-Basic/7.DockerBasic.png)
+
+8. From within the container, run `cd /usr/share/nginx/html` and `cat index.html` to see the content the nginx is serving which is part of the container.
+
+```
+cd /usr/share/nginx/html
+cat index.html
+```
+
+![ConnectPrivate](/images/1.Docker-Basic/8.DockerBasic.png)
+
+9. Type `exit` to exit our shell within the container.
+```
+exit   
+```
+
