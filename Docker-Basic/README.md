@@ -8,7 +8,6 @@ In this part, you check if Docker is installed on the Ubuntu Linux, and download
 Docker --version
 ```
 
-![ConnectPrivate](/images/1.Docker-Basic/1.DockerBasic.png)
 
 2. Docker containers are built using images. Let's run the command `docker pull nginx:latest` to pull down the latest nginx trusted image from Docker Hub.
 
