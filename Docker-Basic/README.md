@@ -40,7 +40,7 @@ Specify some flags in the Docker command:
 ![ConnectPrivate](/images/1.Docker-Basic/3.DockerBasic.png)
 
 5. Now, let's run `docker ps` to see that our container is running.
-   - `docker ps` is a command to list containers. 
+- `docker ps` is a command to list containers. 
 
 ```
 docker ps
