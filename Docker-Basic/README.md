@@ -39,5 +39,20 @@ Specify some flags in the Docker command:
 
 ![ConnectPrivate](/images/1.Docker-Basic/3.DockerBasic.png)
 
+5. Now, let's run `docker ps` to see that our container is running.
+   - `docker ps` is a command to list containers. 
 
-1. 
+```
+docker ps
+``` 
+
+![ConnectPrivate](/images/1.Docker-Basic/4.DockerBasic.png)
+
+6. Try `curl http://localhost:8008` to use the the nginx container and verify it is working with its default `index.html`.
+   - curl is a command line tool that enables data exchange between a device and a server through a terminal.
+
+```
+curl http://localhost:8080
+```
+
+![ConnectPrivate](/images/1.Docker-Basic/5.DockerBasic.png)
