@@ -77,6 +77,7 @@ cat index.html
 ![ConnectPrivate](/images/1.Docker-Basic/8.DockerBasic.png)
 
 9. Type `exit` to exit our shell within the container.
+
 ```
 exit   
 ```
@@ -86,19 +87,37 @@ exit
 10. Run `docker stop nginx` to stop the container. Before you can remove a container, you must stop the container first.
 - The `docker stop` command is used to stop a running container. 
 
+```
+docker stop nginx
+```
+
 ![ConnectPrivate](/images/1.Docker-Basic/10.DockerBasic.png)
+
 
 11. Run `docker ps -a` command and you should see that our container is still there but stopped.
 - The `docker ps -a` command is used to see all containers running or not.
 
+```
+docker ps -a
+```
+
 ![ConnectPrivate](/images/1.Docker-Basic/13.DockerBasic.png)  
+
 
 12. Run `docker rm nginx` to completely remove the container once and for all.
 - The `docker rm` command is used to remove one or more containers. 
+
+```
+docker rm nginx
+```
 
 ![ConnectPrivate](/images/1.Docker-Basic/11.DockerBasic.png)
 
 13. Now, you can use `docker rmi nginx:latest` to remove the nginx image from our machine's local cache. You must ensure that no containers are running off of that image before attempting to remove the image.
 - The `docker rmi` command is used to remove the image.
+
+```
+docker rmi nginx:latest
+```
 
 ![ConnectPrivate](/images/1.Docker-Basic/12.DockerBasic.png)
