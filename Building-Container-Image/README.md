@@ -24,6 +24,7 @@ EOF
 ```
 
 - `FROM nginx:latest`: this command specifies the base image that Docker will use to build the new container.
+
 - `COPY index.html /usr/share/nginx/html`: This command copies the index.html file from the current directory on the host machine into the /usr/share/nginx/html directory in the container.
 
 ![ConnectPrivate](/images/2.Building-a-Container-Image/3.ContainerImage.png)
@@ -45,7 +46,9 @@ docker build -t nginx:1.0 .
 ```
 
 - `docker build -t` in Docker is used to build a Docker image from the instruction in the `Dockerfile`
+  
 - `-t` is used to assign a tag to the Docker image you just create from the Dockerfile
+  
 - The dot `.` represents the build context. When you run `docker build -t nginx:1.0 .`, the dot indicates that the `current directory` (where your Dockerfile is located) serves as the build context.
 
 ![ConnectPrivate](/images/2.Building-a-Container-Image/5.ContainerImage.png)
@@ -54,6 +57,10 @@ docker build -t nginx:1.0 .
 
 6. You can now use `docker history nginx:1.0` to see all the steps and base containers that our `nginx:1.0` is built on.
 - The `docker history` command shows the history of an image
+
+```
+docker history nginx:1.0
+```
 
 ![ConnectPrivate](/images/2.Building-a-Container-Image/7.ContainerImage.png)
 
