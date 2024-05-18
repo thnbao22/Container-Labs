@@ -67,7 +67,7 @@ docker history nginx:1.0
 ![ConnectPrivate](/images/2.Building-a-Container-Image/8.ContainerImage.png)
 
 7. Type `docker run -p 8080:80 --name nginx nginx:1.0` to run our new container.
-   - Note that we didn't specify the `-d` to make it a `daemon` which means it holds control of our terminal and outputs the containers logs to there which can be handy in debugging.
+- Note that we didn't specify the `-d` to make it a `daemon` which means it holds control of our terminal and outputs the containers logs to there which can be handy in debugging.
 
 ```
 docker run -p 8080:80 --name nginx nginx:1.0
@@ -81,3 +81,91 @@ The command `docker run -p 8080:80 --name nginx nginx:1.0` has the following c
 - `--name nginx`: This command names the Docker container nginx. This helps you easily manage and manipulate containers.
   
 - `nginx:1.0`: This command names the Docker container nginx. This helps you easily manage and manipulate containers.
+
+So, the command `docker run -p 8080:80 --name nginx nginx:1.0` will run a Docker container from Docker image `nginx:1.0`, name the container `nginx` and map the host's port 8080 to port 80 of Docker containers.
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/9.ContainerImage.png)
+
+8. Open another terminal and type the following command.
+
+```
+curl http://localhost:8080
+```
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/10.ContainerImage.png)
+
+9. Go back to the first tab and see the log lines sent right out to STDOUT.
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/11.ContainerImage.png)
+
+10. Type `Ctrl-C` to exit the log output. Note that the container has been stopped but is still there by running a `docker ps -a`.
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/12.ContainerImage.png)
+
+```
+docker ps -a
+```
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/13.ContainerImage.png)
+
+11. Use `docker inspect nginx` to see lots of info about our stopped container.
+- The `docker inspect` finds details on a container
+
+```
+docker inspect nginx
+```
+
+12. Now, use `docker rm nginx` to delete the container.
+
+```
+docker rm nginx
+```
+![ConnectPrivate](/images/2.Building-a-Container-Image/14.ContainerImage.png)
+
+13. For our last magic trick, we're going to try mounting some files from the host into the container rather than embedding them in the image.
+
+```
+docker run -d -p 8080:80 -v /home/charles/container-image/index.html:usr/share/nginx/html/index.html\:ro --name nginx nginx:latest
+```
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/15.ContainerImage.png)
+
+14. Now try a `curl http://localhost:8080`. Note that even though this is the upstream nginx image from Docker Hub our content is there.
+
+```
+curl http://localhost:8080
+```
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/16.ContainerImage.png)
+
+15. Edit the index.html file and add some more things.
+
+```
+echo "Docker" >> index.html
+```
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/17.ContainerImage.png)
+
+16. Try another `curl http://localhost:8080` and note the immediate changes.
+
+```
+curl http://localhost:8080
+```
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/18.ContainerImage.png)
+
+17. Finally, run `docker stop nginx and docker rm nginx` to stop and remove our last container.
+
+```
+docker stop nginx && docker rm nginx
+```
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/19.ContainerImage.png)
+
+18. You can check if the container has stopped running by using `docker ps -a`. 
+
+```
+docker ps -a
+```
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/20.ContainerImage.png)
