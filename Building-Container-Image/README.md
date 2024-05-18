@@ -41,8 +41,11 @@ echo "Hello, my name is Charles Thien and this is my first Dockerfile" > index.h
 - The `docker build` command builds Docker images from a Dockerfile and a "context".
 
 ```
-docker build -t nginx:1.0
+docker build -t nginx:1.0 .
 ```
+
+- `docker build -t` in Docker is used to build a Docker image from the instruction in the `Dockerfile`
+- `-t` is used to assign a tag to the Docker image you just create from the Dockerfile
 
 ![ConnectPrivate](/images/2.Building-a-Container-Image/5.ContainerImage.png)
 
