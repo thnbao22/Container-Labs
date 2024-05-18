@@ -46,6 +46,7 @@ docker build -t nginx:1.0 .
 
 - `docker build -t` in Docker is used to build a Docker image from the instruction in the `Dockerfile`
 - `-t` is used to assign a tag to the Docker image you just create from the Dockerfile
+- The dot `.` represents the build context. When you run `docker build -t nginx:1.0 .`, the dot indicates that the `current directory` (where your Dockerfile is located) serves as the build context.
 
 ![ConnectPrivate](/images/2.Building-a-Container-Image/5.ContainerImage.png)
 
