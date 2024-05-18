@@ -51,3 +51,26 @@ docker build -t nginx:1.0 .
 ![ConnectPrivate](/images/2.Building-a-Container-Image/5.ContainerImage.png)
 
 ![ConnectPrivate](/images/2.Building-a-Container-Image/6.ContainerImage.png)
+
+6. You can now use `docker history nginx:1.0` to see all the steps and base containers that our `nginx:1.0` is built on.
+- The `docker history` command shows the history of an image
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/7.ContainerImage.png)
+
+![ConnectPrivate](/images/2.Building-a-Container-Image/8.ContainerImage.png)
+
+7. Type `docker run -p 8080:80 --name nginx nginx:1.0` to run our new container.
+   - Note that we didn't specify the `-d` to make it a `daemon` which means it holds control of our terminal and outputs the containers logs to there which can be handy in debugging.
+
+```
+docker run -p 8080:80 --name nginx nginx:1.0
+```
+
+The command `docker run -p 8080:80 --name nginx nginx:1.0` has the following components:
+- `docker run`: Is the basic command of Docker, used to run a container from a Docker image.
+  
+- `-p 8080:80`: This command maps port 8080 of the host (the machine you are running Docker on) to port 80 of the Docker container. This means that if you visit localhost:8080 on your server's web browser, you will be redirected to the application running on port 80 of the Docker container.
+  
+- `--name nginx`: This command names the Docker container nginx. This helps you easily manage and manipulate containers.
+  
+- `nginx:1.0`: This command names the Docker container nginx. This helps you easily manage and manipulate containers.
