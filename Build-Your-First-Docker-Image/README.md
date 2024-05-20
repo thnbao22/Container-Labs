@@ -67,3 +67,64 @@ docker run charles-devops-image:latest
 ```
 
 ![alt text](../images/3.Build-Your-First-Docker-Image/6DockerImage.png)
+
+7. We can use the `docker ps -a` command to see our container.
+
+```
+docker ps -a
+```
+
+![alt text](../images/3.Build-Your-First-Docker-Image/7DockerImage.png)
+
+8. Plus, we will push our image to a registry which means the Docker Hub. First, let's name (tag) our current Docker image.
+
+```
+docker tag charles-devops-image:latest charles22aws/charles-devops-image:latest
+```
+
+- The command `docker tag charles-devops-image:latest charles22aws/charles-devops-image:latest` is used to create a new tag for the current Docker image.
+- Here, `charles-devops-image:latest` is the name and tag of the current Docker image. `charles22aws/charles-devops-image:latest` is the new name and tag you want to create.
+
+![alt text](../images/3.Build-Your-First-Docker-Image/8DockerImage.png)
+
+9. Use `docker push` to push the image.
+- The `docker push` command upload an image to registry
+
+```
+docker push charles22aws/charles-devops-image:latest
+```
+
+![alt text](../images/3.Build-Your-First-Docker-Image/9DockerImage.png)
+
+10. We have pushed the image successfully, now we are going to remove the image. Let's look at our image first. Using the docker images command to list images.
+
+```
+docker images
+```
+
+![alt text](../images/3.Build-Your-First-Docker-Image/10DockerImage.png)
+
+11. Use `docker ps -a` to see all containers running or not.
+
+```
+docker ps -a
+```
+![alt text](../images/3.Build-Your-First-Docker-Image/12DockerImage.png)
+
+12.  Let's remove our container by using `docker rm`.
+
+```
+docker rm <containerID>
+```
+
+Here, the containerId will depend on your containerID.
+
+![alt text](../images/3.Build-Your-First-Docker-Image/13DockerImage.png)
+
+13. The container has been removed. We can check it by using `docker ps -a` again.
+
+![alt text](../images/3.Build-Your-First-Docker-Image/14DockerImage.png)
+
+14. Now, we are able to delete our images.
+
+![alt text](../images/3.Build-Your-First-Docker-Image/15DockerImage.png)
