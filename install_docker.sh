@@ -21,3 +21,5 @@ sudo apt update
 # Install Docker
 sudo apt install docker-ce
 
+# Verify Docker Status
+sudo systemctl status docker
