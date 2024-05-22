@@ -69,3 +69,40 @@ docker save -o mynginx.tar nginx
 - `nginx`: This is the name of Docker image you want to save in the mynginx.tar file
 
 ![alt text](../images/5.Sharing-Tar/6.Sharing.png)
+
+7. Use the `ls -l` to list all the files. You can see our two files named nginx.tar and mynginx.tar.
+
+```
+ls -l
+```
+
+![alt text](../images/5.Sharing-Tar/7.Sharing.png)
+
+8. Now, let's remove our `nginx-devops` image.
+
+```
+docker rmi nginx-devops
+```
+
+![alt text](../images/5.Sharing-Tar/8.Sharing.png)
+
+9. Then delete all images and containers running.
+
+![alt text](../images/5.Sharing-Tar/9.Sharing.png)
+
+10. Let's load the Docker image into your system.
+
+```
+docker load < mynginx.tar
+```
+
+![alt text](../images/5.Sharing-Tar/10.Sharing.png)
+
+11. You can check our new iamge by using the docker images command.
+
+```
+docker images
+```
+
+![alt text](../images/5.Sharing-Tar/11.Sharing.png)
+
