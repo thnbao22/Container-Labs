@@ -1,0 +1,1 @@
+print("Hello Docker, I am Charles Thien")
