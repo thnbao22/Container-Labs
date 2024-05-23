@@ -103,3 +103,31 @@ SELECT * FROM tblStudent;
 Now, let's run this command again to see the result.
 
 ![alt text](../images/7.MySQL-Docker/8.MySQL.png)
+
+5. Type exit to exit the bash of the MySQL and the terminal of the container.
+
+```
+exit
+```
+
+![alt text](../images/7.MySQL-Docker/9.MySQL.png)
+
+![alt text](../images/7.MySQL-Docker/10.MySQL.png)
+
+6. Type `docker volume ls` to see the volume. We can see our mysql8-volume volume.
+
+```
+docker volume ls
+```
+
+![alt text](../images/7.MySQL-Docker/10.MySQL.png)
+
+7. Now, let's remove our container, image and volume.
+
+![alt text](../images/7.MySQL-Docker/11.MySQL.png)
+
+![alt text](../images/7.MySQL-Docker/12.MySQL.png)
+
+![alt text](../images/7.MySQL-Docker/13.MySQL.png)
+
+![alt text](../images/7.MySQL-Docker/14.MySQL.png)
