@@ -43,3 +43,63 @@ mysql -u root -p
 ```
 
 ![alt text](../images/7.MySQL-Docker/3.MySQL.png)
+
+4. Use the following command to interact with MySQL.
+
+```
+CREATE DATABASE TestDB;
+```
+- Create a database named `TestDB`
+
+![alt text](../images/7.MySQL-Docker/4.MySQL.png)
+
+
+```
+USE TestDB;
+```
+- The `USE TestDB;` command in MySQL is used to select a database (with the name `TestDB`) as the default (current) database for subsequent statements.
+
+![alt text](../images/7.MySQL-Docker/5.MySQL.png)
+
+```
+CREATE TABLE tblStudent (
+		studentID INT PRIMARY KEY AUTO_INCREMENT,
+		studentName NVARCHAR(100),
+		age int CHECK(age > 0)
+);
+```
+
+Here, we create a table named `tblStudent` with the following columms:
+- `studentID`: An integer column designated as the `primary key`. The `AUTO_INCREMENT` attribute ensures that each new row inserted into this table will automatically receive a unique value for studentID.
+
+- `studentName`: A column of type `NVARCHAR(100)` (which typically stores Unicode text) to hold student names.
+
+- `age`: An integer column with a check constraint `(CHECK(age > 0))`. This constraint ensures that the age value must be **greater than zero**.
+
+![alt text](../images/7.MySQL-Docker/6.MySQL.png)
+
+```
+SELECT * FROM tblStudent;
+```
+
+Use this command to retrieve data from the `tblStudent` table. After running the command, you will see that the table doesn’t have any data, as we haven’t inserted anything into it.
+
+![alt text](../images/7.MySQL-Docker/7.MySQL.png)
+
+```
+INSERT INTO tblStudent(studentName, age)
+VALUES('Charles Thien', 19);
+```
+
+- `INSERT INTO tblStudent(studentName, age)`: This part specifies the table name (tblStudent) and the columns into which we want to insert data (studentName and age).
+
+- `VALUES('Charles Thien', 19)`: Here, we provide the actual values to be inserted. 'Charles Thien' will be inserted into the `studentName` column, and 19 will be inserted into the `age` column.
+
+
+```
+SELECT * FROM tblStudent;
+```
+
+Now, let's run this command again to see the result.
+
+![alt text](../images/7.MySQL-Docker/8.MySQL.png)
