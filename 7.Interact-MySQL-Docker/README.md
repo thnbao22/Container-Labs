@@ -122,7 +122,7 @@ docker volume ls
 
 ![alt text](../images/7.MySQL-Docker/10.MySQL.png)
 
-7. Now, let's remove our container, image and volume.
+7. Now, let's remove our container, image and volume. Following these steps to perform this action.
 
 ![alt text](../images/7.MySQL-Docker/11.MySQL.png)
 
