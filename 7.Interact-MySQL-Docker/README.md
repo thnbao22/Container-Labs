@@ -27,3 +27,19 @@ Let’s break down the docker run command I provided:
 - `-d mysql`: The `-d` flag runs the container in `detached mode` (in the background). The `mysql` (latest version) argument specifies the Docker image to use for the container.
 
 ![alt text](../images/7.MySQL-Docker/1.MySQL.png)
+
+2. Let's execute a shell (bash) inside a running MySQL container.
+
+```
+docker exec -it mysql8-container bash
+```
+
+![alt text](../images/7.MySQL-Docker/2.MySQL.png)
+
+3. Use the following command to connect to the MySQL shell. 
+
+```
+mysql -u root -p
+```
+
+![alt text](../images/7.MySQL-Docker/3.MySQL.png)
