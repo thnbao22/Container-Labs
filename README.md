@@ -1,7 +1,8 @@
 # Introduction 
 
 
-This is the repository which hosts my hands-on lab with Docker
+This is the repository which hosts my hands-on lab with Docker. You can download this [script](install_docker.sh) to install Docker on Ubuntu Linux.
+
 
 1. [Docker Basic](Docker-Basic) 
 2. [Building Container Image](Building-Container-Image)
