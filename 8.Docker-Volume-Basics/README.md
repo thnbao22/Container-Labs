@@ -2,6 +2,23 @@
 
 In this lab, you will learn how to create a volume. You should than run a simple an thin container and attach a volume to it. Use the image selaworkshops/busybox:latest and use any name to the mounted volume directory. 
 
+## Explain about the volume types
+
+There are `two types` of volume.
+
+Every volume is a mount point on the container directory tree to a location on the host directory tree, but the types differ in where that location is on the host.
+
+- The first type of volume is a `bind mount`. Bind mount volumes use any `user-specified directory` or `file` on the `host OS`.
+
+- The second type is a `managed volume`. Managed volumes use `locations that are created by the Docker daemon` in space controlled by the daemon, called `Docker managed space`.
+
+![alt text](../images/8.Docker-Volume-Basics/Volume_types.png)
+
+### Docker managed volume
+Managed volumes are different from bind mount volumes because the Docker daemon creates managed volumes in a portion of the host’s file system that’s owned by Docker. 
+
+Managed volumes are created when you use the `-v` option (or `--volume`) on docker run but `only specify the mount point in the container directory tree`.
+
 1. Create a new volume and call it `my-volume`.
 
 ```
@@ -75,3 +92,15 @@ docker ps -a
 9. Delete the image.
 
 ![alt text](../images/8.Docker-Volume-Basics/11.Volumes.png)
+
+### Bind mount volumes
+
+Bind mount volumes are useful when the host provides some file or directory that needs to be mounted into the container directory tree at a specific point.
+
+Note: Volume được gắn vào theo kiểu `bind mount` sẽ tạo mới đường dẫn được gắn hoặc nếu có đường dẫn rồi thì `ghi đè toàn bộ dữ liệu`.
+
+
+
+
+# Conclusion
+
