@@ -11,4 +11,4 @@ This is the repository which hosts my hands-on lab with Docker. You can download
 5. [Saving Images and Containers as Tar Files for Sharing](5.Saving-Images-Containers-Tar-Sharing)
 6. [Dockerfile for Python - Beginner](6.Dockerfile-for-Python-Beginner)
 7. [Interact with MySQL container](7.Interact-MySQL-Docker)
-8. [Docker Volume Basics](images/8.Docker-Volume-Basics)
+8. [Docker Volume Basics](8.Docker-Volume-Basics)
