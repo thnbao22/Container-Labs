@@ -118,8 +118,8 @@ Here’s what each part of the command does:
 
 - `--name`: we specify the name of the container is `devopsweb`.   
 
-- `-v`: Use the `-v` option and a location map to create the bind mount volume. 
-    + 
+- -v ~/devops-docs:/usr/local/apache2/htdocs: This option mounts the local directory ~/devops-docs (on your host machine) to the directory /usr/local/apache2/htdocs inside the Docker container. Any changes made in the local directory will be reflected inside the container, and vice versa.
+
 
 ![alt text](../images/8.Docker-Volume-Basics/13.Managed.png)
 
