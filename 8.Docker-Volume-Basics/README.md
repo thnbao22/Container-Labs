@@ -119,7 +119,7 @@ Here’s what each part of the command does:
 - `--name`: we specify the name of the container is `devopsweb`.   
 
 - `-v ~/devops-docs:/usr/local/apache2/htdocs`: This option mounts the local directory ~/devops-docs (on your host machine) to the directory /usr/local/apache2/htdocs inside the Docker container. Any changes made in the local directory will be reflected inside the container, and vice versa.
- + hello
+   - hello
 
 
 ![alt text](../images/8.Docker-Volume-Basics/13.Managed.png)
