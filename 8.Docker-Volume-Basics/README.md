@@ -14,7 +14,7 @@ Every volume is a mount point on the container directory tree to a location on t
 
 ![alt text](../images/8.Docker-Volume-Basics/Volume_types.png)
 
-### Docker managed volume
+### Docker managed volumes
 Managed volumes are different from bind mount volumes because the Docker daemon creates managed volumes in a portion of the host’s file system that’s owned by Docker. 
 
 Managed volumes are created when you use the `-v` option (or `--volume`) on docker run but `only specify the mount point in the container directory tree`.
@@ -99,8 +99,31 @@ Bind mount volumes are useful when the host provides some file or directory that
 
 Note: Volume được gắn vào theo kiểu `bind mount` sẽ tạo mới đường dẫn được gắn hoặc nếu có đường dẫn rồi thì `ghi đè toàn bộ dữ liệu`.
 
+1. Make a directory and name it `devops-docs`.
 
+```
+mkdir devops-docs
+```
+
+![alt text](../images/8.Docker-Volume-Basics/12.Managed.png)
+
+2. Type the following command to start an Apache HTTP server where your new directory (devops-docs) is bind mounted to the server's document root.
+
+```
+docker run -d --name devopsweb -v ~/devops-docs:/usr/local/apache2/htdocs -p 80:80 httpd:latest
+```
+
+Here’s what each part of the command does:
+- `-d`: Run a `detached mode` container.
+
+- `--name`: we specify the name of the container is `devopsweb`.   
+
+- `-v`: Use the `-v` option and a location map to create the bind mount volume. 
+    + 
+
+![alt text](../images/8.Docker-Volume-Basics/13.Managed.png)
 
 
 # Conclusion
-
+Bind mount volumes are **useful** if you want to `share data` with other processes running
+outside a container, such as components of the host system itself.
