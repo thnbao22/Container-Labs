@@ -188,9 +188,22 @@ This command starts a container with a similar read-only bind mount as the web s
 
 ## Bind mount volumes
 
+You can use **bind mount volumes** to `mount individual files`. This provides the flexibility to create or link resources at a level that avoids conflict with other resources.
+
 + Advantages:
-  - Bind mount volumes are **useful** if you want to `share data` with other processes running
-outside a container, such as components of the host system itself.
+  - Bind mount volumes are **useful** if you want to `share data` with other processes running outside a container, such as components of the host system itself.
   
   - The important thing to note in this case is that `the file must exist on the host` before you create the container.
+  
+  - Bind mount volumes are `appropriate tools` for workstations or machines with `specialized concerns`.
+  
++ Disadvantages:
+  - The first problem with bind mount volumes is that they tie otherwise portable container descriptions to the file system of a specific host.
+  
+  - The next big problem is that they create an opportunity for `conflict with other containers`.
+
+## Docker managed volumes
+
+Using managed volumes is a method of `decoupling volumes` from specialized locations on the file system.
+
 
