@@ -119,12 +119,78 @@ Here’s what each part of the command does:
 - `--name`: we specify the name of the container is `devopsweb`.   
 
 - `-v ~/devops-docs:/usr/local/apache2/htdocs`: This option mounts the local directory ~/devops-docs (on your host machine) to the directory /usr/local/apache2/htdocs inside the Docker container. Any changes made in the local directory will be reflected inside the container, and vice versa.
-   - hello
+   - `~/devops-docs`: The host volume on your local machine
+  
+   - `/usr/local/apache2/htdocs`: The volume of the container
 
+- `-p 80:80`: This option maps port 80 of your host machine to port 80 of the Docker container.
+
+- `httpd:latest`: This is the image that the Docker container is based on. In this case, it’s the latest version of the httpd image, which is a Docker image that runs an Apache HTTP server.
 
 ![alt text](../images/8.Docker-Volume-Basics/13.Managed.png)
 
+3. Check the volume being mounted in the container with the following command.
 
+```
+docker inspect -f '{{ .Mounts }}' devopsweb
+```
+
+![alt text](../images/8.Docker-Volume-Basics/14.Managed.png)
+
+4. Another way to check the volume.
+
+```
+docker inspect devopsweb
+```
+
+![alt text](../images/8.Docker-Volume-Basics/15.Managed.png)
+
+Notes: This example touches on an important attribute or feature of volumes. When you mount a volume on a container file system, it replaces the content that the image provides at that location. This behavior is the basis for the polymorphic container pattern.
+
+Expanding on this use case, suppose you want to make sure that the Apache HTTP web server can’t change the contents of this volume.
+
+Fortunately, Docker provides a mechanism to mount volumes as `read-only`. You can do this by appending `:ro` to the volume map specification.
+
+5. Type the following command to force Docker to remove the container named `devopsweb` and its associated volumes, even if the container is running.
+
+```
+docker rm -rf devopsweb
+```
+
+![alt text](../images/8.Docker-Volume-Basics/16.Managed.png)
+
+6. You should change the run command to something like the following.
+
+```
+docker run -d --name devopsweb2 -v ~/devops-docs:/usr/local/apache2/htdocs/:ro -p 80:80 httpd:latest
+```
+
+So, in summary, this command starts a new Docker container named devopsweb2, running an Apache HTTP server, with the local directory ~/devops-docs mounted as a `read-only` volume to /usr/local/apache2 htdocs inside the container, and the web server is accessible via port 80 on the host machine.
+
+![alt text](../images/8.Docker-Volume-Basics/17.Managed.png)
+
+7. By mounting the volume as read-only, you can prevent any process inside the container from modifying the content of the volume. You can see this in action by running a quick test using the following command.
+
+```
+docker run --rm -v ~/devops-docs:/testspace:ro alpine /bin/sh -c 'echo test > /testspace/test'
+```
+
+![alt text](../images/8.Docker-Volume-Basics/18.Managed.png)
+
+This command starts a container with a similar read-only bind mount as the web server. It runs a command that tries to add the word test to a file named test in the volume. The command `fails` because the volume is mounted as `read-only`.
+
+8. End this lab, please follow these steps to delete the containers and images.
+
+![alt text](../images/8.Docker-Volume-Basics/19.Managed.png)
+
+![alt text](../images/8.Docker-Volume-Basics/20.Managed.png)
 # Conclusion
-Bind mount volumes are **useful** if you want to `share data` with other processes running
+
+## Bind mount volumes
+
++ Advantages:
+  - Bind mount volumes are **useful** if you want to `share data` with other processes running
 outside a container, such as components of the host system itself.
+  
+  - The important thing to note in this case is that `the file must exist on the host` before you create the container.
+
