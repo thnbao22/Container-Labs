@@ -206,4 +206,4 @@ You can use **bind mount volumes** to `mount individual files`. This provides th
 
 Using managed volumes is a method of `decoupling volumes` from specialized locations on the file system.
 
-Ngữ cảnh sử dụng docker mananged volume trong trường hợp muốn đồng bộ thư mục giữa host và container mà ko xóa dữ liệu cũ trong container đang có.
+Ngữ cảnh sử dụng `docker mananged volume` trong trường hợp muốn `đồng bộ thư mục` giữa `host` và `container` mà ko `xóa dữ liệu cũ` trong container đang có.
