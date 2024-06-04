@@ -180,7 +180,6 @@ Containers `alpine3` and `alpine4` are connected to the `bridge` network.
 ![alt text](../images/9.Docker-Networking-Basic/24.Defined.png)
 
 ![alt text](../images/9.Docker-Networking-Basic/25.Defined.png)
-
 Containers `alpine1`, `alpine2` and `alpine4` are connected to the `alpine-net` network.
 
 7. Use the `docker attach` command to connect to `alpine1`.
