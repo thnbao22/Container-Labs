@@ -12,3 +12,4 @@ This is the repository which hosts my hands-on lab with Docker. You can download
 6. [Dockerfile for Python - Beginner](6.Dockerfile-for-Python-Beginner)
 7. [Interact with MySQL container](7.Interact-MySQL-Docker)
 8. [Docker Volume Basics](8.Docker-Volume-Basics)
+9. [Docker Networking Basic](9.Docker-Networking-Basic)
