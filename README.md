@@ -13,3 +13,4 @@ This is the repository which hosts my hands-on lab with Docker. You can download
 7. [Interact with MySQL container](7.Interact-MySQL-Docker)
 8. [Docker Volume Basics](8.Docker-Volume-Basics)
 9. [Docker Networking Basic](9.Docker-Networking-Basic)
+10. [Dockerfile for Python Flask App](10.Dockerfile-Flask-Python-App)
