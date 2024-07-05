@@ -1,0 +1,14 @@
+# Start from latest golang parent image
+FROM golang:latest
+
+# Set the working directory inside the container
+WORKDIR /myapp
+
+# Copy source code from current directory to container
+COPY hellogo.go .
+
+# Build the Go app
+RUN go build -o hellogo hellogo.go
+
+# Start the application
+ENTRYPOINT ["./hellogo"]
