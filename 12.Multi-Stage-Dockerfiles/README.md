@@ -250,4 +250,4 @@ The following table presents a summary of the key differents between the builder
 | Need to maintain a shell script and two Dockerfiles   | Needs only one Dockerfiles |
 | Need to copy the executables to the Docker host before copying them to the final Docker image | Can use the --from flag to copy the executables between stages without copying them to the Docker host |
 
-You can view the [best practices](DockerfileBestPractices.md) for building a Dockerfile
+You can view the [best practices](DockerfileBestPractices.md) for building a Dockerfile.
