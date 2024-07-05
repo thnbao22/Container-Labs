@@ -15,4 +15,4 @@ This is the repository which hosts my hands-on lab with Docker. You can download
 9. [Docker Networking Basic](9.Docker-Networking-Basic)
 10. [Dockerfile for Python Flask App](10.Dockerfile-Flask-Python-App)
 11. [Dockerize a PHP application](11.Dockerize-PHP-Application)
-12. [Builer Pattern and Multi-Stage Docker Builds](12.Multi-Stage-Dockerfiles)
+12. [Builder Pattern and Multi-Stage Docker Builds](12.Multi-Stage-Dockerfiles)
