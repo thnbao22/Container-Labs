@@ -228,7 +228,7 @@ In the next stage, we use the `scratch` image as the parent image the parent ima
 docker build -t welcome-multi-stage:v1 .
 ```
 
-![alt text](../images/12.Multi-Stage-DockerFiles/13LabMultiStage.png)
+![alt text](../images/12.Multi-Stage-DockerFiles/14LabMultiStage.png)
 
 5. Use the docker images command to list the Docker image available on your computer.
 
