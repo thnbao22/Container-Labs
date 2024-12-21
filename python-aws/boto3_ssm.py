@@ -4,7 +4,6 @@ import json
 
 from base import BaseAWSServiceProcessor
 
-
 class SsmProcessor(BaseAWSServiceProcessor):
     
     def __init__(self, session: boto3.Session):
@@ -18,12 +17,12 @@ class SsmProcessor(BaseAWSServiceProcessor):
         return _res['Parameter']['Value']
 
     def get_all_params_notification(self):
-        rds_ops_user = self.get_params_decryption("ssm_parameter_name")
-        rds_ops_user_data = json.loads(rds_ops_user)
+        Parma_data = self.get_params_decryption("ssm_parameter_name")
+        Parma_data_data = json.loads(Parma_data)
         return {
-            'a': rds_ops_user_data.get("a"),
-            'b': rds_ops_user_data.get("b"),
-            'c': rds_ops_user_data.get("c"),
-            'd': rds_ops_user_data.get("d"),
-            "e": rds_ops_user_data.get("e")
+            'a': Parma_data_data.get("a"),
+            'b': Parma_data_data.get("b"),
+            'c': Parma_data_data.get("c"),
+            'd': Parma_data_data.get("d"),
+            "e": Parma_data_data.get("e")
         }
